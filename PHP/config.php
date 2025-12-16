@@ -6,5 +6,5 @@ $senha= "daniel261";
 
 $conexao= new PDO("mysql:host=$servername;dbname=$nomedb",$username,$senha);
 echo("Conexão realizada com sucesso!");
-
+echo("Olá munde")
 ?>
