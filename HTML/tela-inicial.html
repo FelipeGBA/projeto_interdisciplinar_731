@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EstruturaDados</title>
+
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+
+<header class="top-bar" id="topBar">
+  <div class="logo-text">EstruturaDados</div>
+
+  <div class="login-area">
+  <div class="login-switch">
+    <a href="login.html" class="login-option login">Login</a>
+    <a href="registrar.html" class="login-option register">Registrar</a>
+    <span class="bubble"></span>
+  </div>
+</div>
+</header>
+
+<main class="hero">
+  <div class="hero-content">
+    <h1>
+      Visualizando<br>
+      Estruturas<br>
+      de Dados
+    </h1>
+
+    <div class="logo">
+      <img src="../imagens/logo.png" alt="Logo Estrutura de Dados">
+    </div>
+  </div>
+
+  <div class="explore-area">
+    <a href="#conteudo" class="explore-btn">EXPLORAR</a>
+
+    <p class="idealizado-hero">
+      <strong>Idealizado por: ANA BEATRIZ SOARES FRAGA, DANIEL CÂMARA ALVES,
+      FELIPE ALVES DOS SANTOS, FELIPE GUSTAVO BARBOSA DE ANDRADE</strong>
+    </p>
+  </div>
+</main>
+
+
+
+<div class="separator">
+  <span></span>
+</div>
+
+<section id="conteudo" class="content-section">
+
+  <h1 class="section-title">Quais são as estruturas?</h1>
+
+  <div class="estrutura pilha">
+    <div class="texto">
+      <h2>Pilha</h2>
+      <p>
+        A pilha é uma estrutura de dados do tipo <strong>LIFO</strong>
+        (Last In, First Out).
+      </p>
+      <p>
+        As principais operações são <strong>push</strong> e <strong>pop</strong>.
+      </p>
+    </div>
+
+    <div class="imagem">
+      <img src="../imagens/pilha.png" alt="Exemplo de Pilha">
+    </div>
+  </div>
+
+  <div class="estrutura fila">
+    <div class="texto">
+      <h2>Fila</h2>
+      <p>
+        A fila segue o modelo <strong>FIFO</strong>
+        (First In, First Out).
+      </p>
+      <p>
+        Operações principais: <strong>enqueue</strong> e <strong>dequeue</strong>.
+      </p>
+    </div>
+
+    <div class="imagem">
+      <img src="../imagens/fila.png" alt="Exemplo de Fila">
+    </div>
+  </div>
+
+  <div class="estrutura array">
+    <div class="texto">
+      <h2>Array</h2>
+      <p>
+        Estrutura com posições contíguas de memória, acessadas por índice.
+      </p>
+      <p>
+        Acesso rápido, mas inserções podem ser custosas.
+      </p>
+    </div>
+
+    <div class="imagem">
+      <img src="../imagens/array.png" alt="Exemplo de Array">
+    </div>
+  </div>
+
+  <div class="estrutura lista-encadeada">
+    <div class="imagem">
+      <img src="../imagens/lista-encadeada.png" alt="Exemplo de Lista Encadeada">
+    </div>
+
+    <div class="texto">
+      <h2>Lista Encadeada</h2>
+      <p>
+        Cada nó possui um valor e uma referência para o próximo.
+      </p>
+      <p>
+        Inserções são eficientes, acesso é sequencial.
+      </p>
+    </div>
+  </div>
+
+  <div class="estrutura lista-circular">
+    <div class="texto">
+      <h2>Lista Circular</h2>
+      <p>
+        O último nó aponta para o primeiro, formando um ciclo.
+      </p>
+      <p>
+        Não existe um fim definido.
+      </p>
+    </div>
+
+    <div class="imagem">
+      <img src="../imagens/lista-circular.png" alt="Exemplo de Lista Circular">
+    </div>
+  </div>
+
+  <div class="cta-final">
+    <p class="cta-text">
+      Quer experimentar na prática essas estruturas?
+    </p>
+
+    <a href="registrar.html" class="btn-cadastro">
+      CADASTRE-SE
+    </a>
+    
+    <p class="cta-login">
+      Já tem uma conta?
+      <a href="#" class="login-link">Entrar</a>
+    </p>
+  </div>
+
+  <p class="idealizado-final">
+    Idealizado por: ANA BEATRIZ SOARES FRAGA, DANIEL CÂMARA ALVES,
+    FELIPE ALVES DOS SANTOS, FELIPE GUSTAVO BARBOSA DE ANDRADE
+  </p>
+
+</section>
+
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector('.top-bar');
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      header.classList.add('hide');
+    } else {
+      header.classList.remove('hide');
+    }
+
+    lastScrollTop = scrollTop;
+  });
+</script>
+
+
+</body>
+</html>
