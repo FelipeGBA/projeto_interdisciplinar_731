@@ -1,10 +1,26 @@
+<?php
+
+if ($_SERVER[""] == "POST") {
+
+    $nome  = $_POST["nome"] ?? "";
+    $email = $_POST["email"] ?? "";
+    $senha = $_POST["senha"] ?? "";
+
+    $usuarios = [];
+
+    foreach ($usuarios as $usuario) {
+        
+    }
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>Registrar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -15,33 +31,33 @@
     <h1>Registrar</h1>
     <img src="../imagens/logo.png" alt="Logo" class="auth-logo">
 
-    <form class="register-form">
+    <form class="register-form" method="POST" action="">
 
       <label>Nome</label>
-      <input type="text" required>
+      <input type="text" name="nome" placeholder="Digite seu nome completo" required>
 
       <label>Email</label>
-      <input type="email" required>
+      <input type="email" name="email" placeholder="Digite seu e-mail" required>
 
       <label>Senha</label>
-      <input type="password" required minlength="6">
+      <input type="password" name="senha" placeholder="Crie uma senha" required minlength="6">
 
       <label>Confirmar senha</label>
-      <input type="password" required minlength="6">
+      <input type="password" name="confirmar_senha" placeholder="Confirme sua senha" required minlength="6">
 
       <button type="submit">Criar conta</button>
 
     </form>
 
     <div class="auth-actions">
-      <a href="login.html" class="link-btn">Já tenho conta</a>
+      <a href="login.php" class="link-btn">Já tenho conta</a>
       <a href="tela-inicial.html" class="link-btn back">Voltar</a>
     </div>
   </div>
 
   <footer class="credits">
-  Idealizado por: ANA BEATRIZ SOARES FRAGA, DANIEL CÂMARA ALVES,
-  FELIPE ALVES DOS SANTOS, FELIPE GUSTAVO BARBOSA DE ANDRADE
+    Idealizado por: ANA BEATRIZ SOARES FRAGA, DANIEL CÂMARA ALVES,
+    FELIPE ALVES DOS SANTOS, FELIPE GUSTAVO BARBOSA DE ANDRADE
   </footer>
 
 </body>

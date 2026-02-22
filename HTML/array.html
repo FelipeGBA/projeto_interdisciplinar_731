@@ -9,7 +9,7 @@
 <body>
 
 <header class="top-bar">
-  <div class="logo-text">EstruturaDados</div>
+  <a href="tela-inicial.html" class="logo-text">EstruturaDados</a>
 
   <div class="login-area">
     <img src="../imagens/user.png" alt="Usuário">
@@ -45,9 +45,7 @@
 
   </nav>
 
-  <div class="divider">
-    <img src="../imagens/linha.png" alt="Divisão">
-  </div>
+  <div class="vertical-line"></div>
 
   <section class="content">
 
@@ -56,33 +54,35 @@
       <div class="input-area">
 
         <div class="input-group">
+
           <div>
             <label>Adicione um valor:</label><br>
-            <input type="text">
+            <input type="text" placeholder="Digite o valor">
           </div>
 
           <div>
             <label>Inserir posição:</label><br>
-            <input type="text">
+            <input type="text" placeholder="Digite a posição">
           </div>
 
-          <div style="display:flex; align-items:end;">
+          <div class="btn-container">
             <button class="btn">Adicionar</button>
           </div>
+
         </div>
 
-        <div class="input-group" style="margin-top:25px;">
+        <div class="input-group second-group">
 
           <div>
             <label>Inserir posição:</label><br>
-            <input type="text">
+            <input type="text" placeholder="Digite a posição">
           </div>
 
-          <div style="display:flex; align-items:end;">
+          <div class="btn-container">
             <button class="btn">Remover</button>
           </div>
 
-          <div style="display:flex; align-items:end;">
+          <div class="btn-container">
             <button class="btn">Buscar</button>
           </div>
 

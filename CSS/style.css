@@ -52,7 +52,6 @@ body {
   transform: translateY(-100%);
 }
 
-
 .logo-text {
   font-family: Arial, sans-serif;
   font-size: 40px;
@@ -86,7 +85,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 140px;
+  padding-top: 50px;
 }
 
 
@@ -94,14 +93,14 @@ body {
 .hero-content {
   display: flex;
   align-items: center;
-  gap: 80px;
-  margin-bottom: 80px;
+  gap: 50px;
+  margin-bottom: 20px;
 }
 
 
 
 .hero h1 {
-  font-size: 80px;
+  font-size: 70px;
   line-height: 1.1;
   font-weight: 500;
 }
@@ -118,7 +117,7 @@ body {
 }
 
 .logo img {
-  width: 500px;
+  width: 400px;
 }
 
 .explore-btn {
@@ -126,9 +125,9 @@ body {
   background: white;
   color: black;
   border: none;
-  padding: 30px 80px;
+  padding: 20px 60px;
   border-radius: 50px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
@@ -303,18 +302,90 @@ html {
 }
 
 .register-card {
-  width: 480px;
+  width: 390px;
   max-width: 95%;
-  padding: 40px;
-  border-radius: 20px;
+  padding: 22px 22px;
+  border-radius: 16px;
   background: #000;
   color: #fff;
 }
 
 .register-card h1 {
-  font-size: 32px;
-  margin-bottom: 30px;
+  font-size: 22px;
+  margin-bottom: 16px;
   text-align: center;
+}
+
+.auth-logo {
+  width: 75px;
+  display: block;
+  margin: 0 auto 18px auto;
+  margin-bottom: 4px;
+}
+
+.register-form label {
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 9px;
+  font-size: 13px;
+  border-radius: 7px;
+  border: none;
+  margin-bottom: 8px;
+}
+
+.btn-login {
+  margin-top: 18px;
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, #2f80ed, #56ccf2);
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-login:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(47, 128, 237, 0.35);
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.btn-register-outline {
+  margin-top: 18px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 999px;
+  border: 2px solid #2f80ed;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-register-outline:hover {
+  background-color: #2f80ed;
+  transform: translateY(-3px);
+}
+
+.btn-back-home {
+  margin-top: 12px;
+  font-size: 13px;
 }
 
 .register-form label {
@@ -531,8 +602,6 @@ html {
   gap: px;
 }
 
-
-
 .idealizado-hero {
   font-family: Arial, sans-serif;
   font-size: 20px;
@@ -567,8 +636,6 @@ html {
   text-align: center;
   max-width: 90%;
 }
-
-/* ===== LOGIN ESTILO INSTAGRAM ===== */
 
 .login-card {
   text-align: center;
@@ -638,8 +705,6 @@ html {
   transform: translateY(-4px);
   box-shadow: 0 18px 35px rgba(47, 128, 237, 0.4);
 }
-
-/* ===== BOTÃO VOLTAR PARA O INÍCIO ===== */
 
 .btn-back-home {
   margin-top: 16px;

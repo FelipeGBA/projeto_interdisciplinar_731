@@ -1,10 +1,25 @@
+<?php
+
+if ($_SERVER[""] == "POST") {
+
+    $email = $_POST["email"] ?? "";
+    $senha = $_POST["senha"] ?? "";
+
+    $usuarios = [];
+
+    foreach ($usuarios as $usuario) {
+        
+    }
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -15,13 +30,13 @@
     <h1>Login</h1>
     <img src="../imagens/logo.png" alt="Logo" class="auth-logo">
 
-    <form class="register-form">
+    <form class="register-form" method="POST" action="">
 
       <label>Endereço de e-mail</label>
-      <input type="email" required>
+      <input type="email" name="email" placeholder="Digite seu e-mail" required>
 
       <label>Senha</label>
-      <input type="password" required minlength="6">
+      <input type="password" name="senha" placeholder="Digite sua senha" required minlength="6">
 
       <button type="submit" class="btn-login">Entrar</button>
 
@@ -29,7 +44,7 @@
 
     </form>
 
-    <a href="registrar.html" class="btn-register-outline">Registrar</a>
+    <a href="registrar.php" class="btn-register-outline">Registrar</a>
 
     <a href="tela-inicial.html" class="btn-back-home">Voltar para o início</a>
 

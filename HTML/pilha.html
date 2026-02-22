@@ -9,7 +9,7 @@
 <body>
 
 <header class="top-bar">
-  <div class="logo-text">EstruturaDados</div>
+  <a href="tela-inicial.html" class="logo-text">EstruturaDados</a>
 
   <div class="login-area">
     <img src="../imagens/user.png" alt="Usuário">
@@ -45,19 +45,18 @@
 
   </nav>
 
-  <div class="divider">
-    <img src="../imagens/linha.png" alt="Divisão">
-  </div>
+  <div class="vertical-line"></div>
 
   <section class="content">
 
     <div class="top-content">
 
       <div class="input-area">
-        <label>Adicione um valor:</label>
+
+        <label class="input-label">Adicione um valor:</label>
 
         <div class="input-group">
-          <input type="text">
+          <input type="text" placeholder="Digite o valor aqui">
           <button class="btn">Empilhar</button>
         </div>
 
@@ -65,6 +64,7 @@
           <button class="btn">Desempilhar</button>
           <button class="btn">Ver Pilha</button>
         </div>
+
       </div>
 
       <div class="image-area">
