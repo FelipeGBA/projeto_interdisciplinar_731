@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost:3306";
-$nomedb= "bancodb";
+$nomedb= "bancoed";
 $username= "teste1";
 $senha= "solucao";
 
