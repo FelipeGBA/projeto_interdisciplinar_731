@@ -18,7 +18,7 @@ if(isset($_POST['salvar'])) {
 
     cadastrar_usuario($nome,$email,$senha);
 
-    header("Location: ../login.php");
+    header("Location: ../HTML/login.php");
     exit;
 }
 ?>

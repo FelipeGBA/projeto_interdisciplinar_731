@@ -1,17 +1,5 @@
 <?php
-
-if ($_SERVER[""] == "POST") {
-
-    $email = $_POST["email"] ?? "";
-    $senha = $_POST["senha"] ?? "";
-
-    $usuarios = [];
-
-    foreach ($usuarios as $usuario) {
-        
-    }
-
-}
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +18,7 @@ if ($_SERVER[""] == "POST") {
     <h1>Login</h1>
     <img src="../imagens/logo.png" alt="Logo" class="auth-logo">
 
-    <form class="register-form" method="POST" action="">
+    <form class="register-form" method="POST" action="../PHP/logar.php">
 
       <label>Endereço de e-mail</label>
       <input type="email" name="email" placeholder="Digite seu e-mail" required>
@@ -38,9 +26,9 @@ if ($_SERVER[""] == "POST") {
       <label>Senha</label>
       <input type="password" name="senha" placeholder="Digite sua senha" required minlength="6">
 
-      <button type="submit" class="btn-login">Entrar</button>
+      <button type="submit" class="btn-login" name="salvar">Entrar</button>
 
-      <a href="#" class="forgot-password">Esqueceu a senha?</a>
+      <a href="esqueceu_senha.php" class="forgot-password">Esqueceu a senha?</a>
 
     </form>
 

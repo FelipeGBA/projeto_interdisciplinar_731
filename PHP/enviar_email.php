@@ -26,7 +26,7 @@ function enviar_email($email, $token) {
         $mail->isHTML(true);
         $mail->Subject = 'Resetar Senha';
 
-        $link = "http://localhost/Site_LP/Site-Web-/redefinir_senha.php?token=" . $token;
+        $link = "http://localhost/projeto_interdisciplinar_731/HTML/nova_senha.php?token=". $token;
 
         $mail->Body = 'Clique no link para redefinir sua senha: 
         <a href="'.$link.'">Redefinir Senha</a>';

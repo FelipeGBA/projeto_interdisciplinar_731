@@ -1,0 +1,31 @@
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle, #1e1e1e, #000);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    color:white;
+}
+
+.card{
+    background:#000;
+    padding:40px;
+    width:350px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+}
+
+button{
+    margin-top:25px;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background: linear-gradient(to right, #2f80ed, #56ccf2);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}

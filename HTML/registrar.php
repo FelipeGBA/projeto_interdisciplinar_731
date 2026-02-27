@@ -1,18 +1,5 @@
 <?php
-
-if ($_SERVER[""] == "POST") {
-
-    $nome  = $_POST["nome"] ?? "";
-    $email = $_POST["email"] ?? "";
-    $senha = $_POST["senha"] ?? "";
-
-    $usuarios = [];
-
-    foreach ($usuarios as $usuario) {
-        
-    }
-
-}
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +18,7 @@ if ($_SERVER[""] == "POST") {
     <h1>Registrar</h1>
     <img src="../imagens/logo.png" alt="Logo" class="auth-logo">
 
-    <form class="register-form" method="POST" action="">
+    <form class="register-form" method="POST" action="../PHP/cadastro.php">
 
       <label>Nome</label>
       <input type="text" name="nome" placeholder="Digite seu nome completo" required>
@@ -45,7 +32,7 @@ if ($_SERVER[""] == "POST") {
       <label>Confirmar senha</label>
       <input type="password" name="confirmar_senha" placeholder="Confirme sua senha" required minlength="6">
 
-      <button type="submit">Criar conta</button>
+      <button type="submit" name="salvar">Criar conta</button>
 
     </form>
 
