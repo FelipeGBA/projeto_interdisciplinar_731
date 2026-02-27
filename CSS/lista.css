@@ -114,13 +114,12 @@
 .area-visual {
   margin-top: 30px;
   width: 100%;
-  min-height: 160px;
+  min-height: 120px;
   background: #111;
   border-radius: 20px;
-  padding: 40px 30px 30px;
+  padding: 50px 30px 30px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   overflow-x: auto;
   position: relative;
 }
@@ -128,9 +127,10 @@
 /* --- Container da lista --- */
 .lista {
   display: flex;
-  flex-direction: column;
-  gap: 22px;
-  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0;
   transition: 0.5s;
 }
 
@@ -139,28 +139,28 @@
   color: #444;
   font-size: 0.95rem;
   font-style: italic;
-  padding: 20px 0;
+  padding: 0;
 }
 
-/* --- Wrapper de cada linha --- */
+/* --- Wrapper de cada nó --- */
 .no-wrapper {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0;
   animation: entrar 0.35s ease both;
   position: relative;
-  margin-top: 18px;
 }
 
-/* Label INÍCIO */
-.label-inicio {
-  font-size: 0.65rem;
+/* Label INÍCIO fixo inline */
+.label-inicio-fixo {
+  font-size: 0.75rem;
   font-weight: 700;
   color: #e74c3c;
-  position: absolute;
-  top: -18px;
-  left: 0;
+  white-space: nowrap;
+  margin-right: 4px;
   letter-spacing: 0.05em;
+  flex-shrink: 0;
 }
 
 /* --- Nó (estilo DebugandoED: retangular dividido) --- */
@@ -261,4 +261,15 @@
   0%   { box-shadow: 0 0 0 0 rgba(241,196,15,0.6); }
   50%  { box-shadow: 0 0 0 10px rgba(241,196,15,0.15); }
   100% { box-shadow: 0 0 0 0 rgba(241,196,15,0.3); }
+}
+
+/* Label INÍCIO fixo inline */
+.label-inicio-fixo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #e74c3c;
+  white-space: nowrap;
+  margin-right: 4px;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
 }

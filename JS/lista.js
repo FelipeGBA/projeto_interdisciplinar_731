@@ -4,19 +4,16 @@
 // =============================================
 
 let lista = [];
-let modalidade = 'inicio'; // 'inicio' | 'fim' | 'ordenada'
+let modalidade = 'inicio';
 let mensagemTimer = null;
 
 // ---------- Modalidade ----------
 
 function trocarModalidade(modo, btnEl) {
   modalidade = modo;
-
-  // Atualiza tabs visuais
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   btnEl.classList.add('active');
 
-  // Atualiza título
   const titulos = {
     inicio:   'Lista Encadeada ( Inserção Início )',
     fim:      'Lista Encadeada ( Inserção Fim )',
@@ -24,13 +21,12 @@ function trocarModalidade(modo, btnEl) {
   };
   document.getElementById('titulo-modalidade').textContent = titulos[modo];
 
-  // Limpa lista ao trocar modalidade
   lista = [];
   renderizar();
   mostrarMensagem(`🔄 Modo: ${titulos[modo]}`, 'aviso');
 }
 
-// ---------- Inserção conforme modalidade ----------
+// ---------- Inserção ----------
 
 function inserir() {
   const v = getValor();
@@ -117,18 +113,21 @@ function renderizar(tipo, indiceAlvo) {
     return;
   }
 
+  // Label fixo INÍCIO
+  const labelInicio = document.createElement('span');
+  labelInicio.className = 'label-inicio-fixo';
+  labelInicio.textContent = 'INÍCIO';
+  container.appendChild(labelInicio);
+
+  const setaInicio = document.createElement('span');
+  setaInicio.className = 'seta-icone';
+  setaInicio.textContent = '→';
+  container.appendChild(setaInicio);
+
   lista.forEach((no, i) => {
     const wrapper = document.createElement('div');
     wrapper.className = 'no-wrapper';
-    wrapper.style.animationDelay = `${i * 0.05}s`;
-
-    // Label INÍCIO no primeiro nó
-    if (i === 0) {
-      const label = document.createElement('div');
-      label.className = 'label-inicio';
-      label.textContent = 'INÍCIO';
-      wrapper.appendChild(label);
-    }
+    wrapper.style.animationDelay = `${i * 0.06}s`;
 
     // Nó
     const noEl = document.createElement('div');
@@ -138,16 +137,15 @@ function renderizar(tipo, indiceAlvo) {
     if (tipo === 'inserir' && i === indiceAlvo) noEl.classList.add('no-novo');
     if (tipo === 'remover' && i === indiceAlvo) noEl.classList.add('no-saindo');
 
-    // Parte dados + parte ponteiro (estilo DebugandoED)
     noEl.innerHTML = `
       <div class="no-dados">${no.valor}</div>
       <div class="no-next">${i < lista.length - 1 ? '→' : 'NULL'}</div>
     `;
     wrapper.appendChild(noEl);
 
-    // Seta entre nós
+    // Seta entre nós (exceto no último)
     if (i < lista.length - 1) {
-      const seta = document.createElement('div');
+      const seta = document.createElement('span');
       seta.className = 'seta-icone';
       seta.textContent = '→';
       wrapper.appendChild(seta);
