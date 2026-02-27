@@ -30,7 +30,7 @@ function trocarModalidade(modo, btnEl) {
   lista = [];
   renderizar();
   renderizarMemoria();
-  mostrarMensagem(`🔄 Modo: ${titulos[modo]}`, 'aviso');
+  mostrarMensagem(` Modo: ${titulos[modo]}`, 'aviso');
 }
 
 // ---------- Inserção ----------
@@ -42,19 +42,19 @@ function inserir() {
   if (modalidade === 'inicio') {
     lista.unshift(criarNo(v));
     renderizar('inserir', 0);
-    mostrarMensagem(`✅ ${v} inserido no início!`, 'sucesso');
+    mostrarMensagem(` ${v} inserido no início!`, 'sucesso');
 
   } else if (modalidade === 'fim') {
     lista.push(criarNo(v));
     renderizar('inserir', lista.length - 1);
-    mostrarMensagem(`✅ ${v} inserido no fim!`, 'sucesso');
+    mostrarMensagem(` ${v} inserido no fim!`, 'sucesso');
 
   } else if (modalidade === 'ordenada') {
     let idx = lista.findIndex(n => n.valor >= v);
     if (idx === -1) idx = lista.length;
     lista.splice(idx, 0, criarNo(v));
     renderizar('inserir', idx);
-    mostrarMensagem(`✅ ${v} inserido em ordem (posição ${idx})!`, 'sucesso');
+    mostrarMensagem(` ${v} inserido em ordem (posição ${idx})!`, 'sucesso');
   }
 
   renderizarMemoria();
@@ -63,19 +63,19 @@ function inserir() {
 // ---------- Remoções ----------
 
 function removerInicio() {
-  if (lista.length === 0) { mostrarMensagem('⚠️ Lista vazia!', 'aviso'); return; }
+  if (lista.length === 0) { mostrarMensagem(' Lista vazia!', 'aviso'); return; }
   const removido = lista.shift();
   renderizar('remover', 0);
   renderizarMemoria();
-  mostrarMensagem(`🗑️ ${removido.valor} removido do início!`, 'remover');
+  mostrarMensagem(` ${removido.valor} removido do início!`, 'remover');
 }
 
 function removerFinal() {
-  if (lista.length === 0) { mostrarMensagem('⚠️ Lista vazia!', 'aviso'); return; }
+  if (lista.length === 0) { mostrarMensagem(' Lista vazia!', 'aviso'); return; }
   const removido = lista.pop();
   renderizar('remover', lista.length);
   renderizarMemoria();
-  mostrarMensagem(`🗑️ ${removido.valor} removido do final!`, 'remover');
+  mostrarMensagem(` ${removido.valor} removido do final!`, 'remover');
 }
 
 // ---------- Busca ----------
@@ -85,12 +85,12 @@ function buscar() {
   if (v === null) return;
   const idx = lista.findIndex(n => n.valor === v);
   if (idx === -1) {
-    mostrarMensagem(`🔍 ${v} não encontrado.`, 'aviso');
+    mostrarMensagem(` ${v} não encontrado.`, 'aviso');
     return;
   }
   destacarNo(idx);
   destacarLinhaMemoria(idx);
-  mostrarMensagem(`🔍 ${v} encontrado na posição ${idx}!`, 'busca');
+  mostrarMensagem(` ${v} encontrado na posição ${idx}!`, 'busca');
 }
 
 // ---------- Reiniciar ----------
@@ -99,7 +99,7 @@ function reiniciar() {
   lista = [];
   renderizar();
   renderizarMemoria();
-  mostrarMensagem('🔄 Lista reiniciada!', 'aviso');
+  mostrarMensagem(' Lista reiniciada!', 'aviso');
 }
 
 // ---------- Helpers ----------
@@ -111,7 +111,7 @@ function criarNo(valor) {
 function getValor() {
   const input = document.getElementById('valor');
   const v = parseInt(input.value);
-  if (isNaN(v)) { mostrarMensagem('⚠️ Digite um valor numérico!', 'aviso'); return null; }
+  if (isNaN(v)) { mostrarMensagem(' Digite um valor numérico!', 'aviso'); return null; }
   return v;
 }
 

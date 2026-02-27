@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Lista Encadeada</title>
   <link rel="stylesheet" href="../CSS/conteudo.css">
+  <link rel="stylesheet" href="../CSS/lista.css">
 </head>
 <body>
 
@@ -45,32 +46,65 @@
       </div>
     </div>
 
-    <h2 class="tab-title">Lista Encadeada</h2>
+    <section class="content">
+    <h2 class="titulo">Lista Encadeada Simples</h2>
+    <p class="descricao">Cada nó aponta para o próximo através do ponteiro next.</p>
 
-    <div class="form-area">
-      <div class="form-group">
-        <label>Adicione um valor:</label>
-        <div class="input-row">
-          <input type="text">
-          <button class="btn">Adicionar Início</button>
-          <button class="btn">Adicionar Fim</button>
-        </div>
+    <!-- TABS DE MODALIDADE -->
+    <div class="modalidade-tabs">
+      <button class="tab-btn active" onclick="trocarModalidade('inicio', this)">Inserção Início</button>
+      <button class="tab-btn" onclick="trocarModalidade('fim', this)">Inserção Fim</button>
+      <button class="tab-btn" onclick="trocarModalidade('ordenada', this)">Inserção Ordenada</button>
+    </div>
+
+    <div class="titulo-modalidade" id="titulo-modalidade">
+      Lista Encadeada ( Inserção Início )
+    </div>
+
+    <!-- CONTROLES -->
+    <div class="painel-controle">
+      <div class="grupo">
+        <label>Valor</label>
+        <input type="number" id="valor" placeholder="Digite o valor">
       </div>
-
-      <div class="form-group">
-        <label>Insira a posição:</label>
-        <div class="input-row">
-          <input type="text">
-          <button class="btn">Buscar</button>
-          <button class="btn">Remover</button>
-        </div>
+      <div class="grupo botoes">
+        <button onclick="inserir()" class="btn inserir">Inserir</button>
+        <button onclick="removerInicio()" class="btn remover">Remover Início</button>
+        <button onclick="removerFinal()" class="btn remover">Remover Final</button>
+        <button onclick="buscar()" class="btn buscar">Buscar</button>
+        <button onclick="reiniciar()" class="btn reiniciar">Reiniciar</button>
       </div>
     </div>
 
-    <h2>Resultado</h2>
-    <div class="result-box"></div>
+    <!-- ÁREA PRINCIPAL: visualização + memória -->
+    <div class="area-principal">
+
+      <!-- VISUALIZAÇÃO -->
+      <div class="area-visual">
+        <div id="lista" class="lista"></div>
+      </div>
+
+      <!-- TABELA DE MEMÓRIA -->
+      <div class="area-memoria">
+        <table id="tabela-memoria" class="tabela-memoria">
+          <thead>
+            <tr>
+              <th>INFORMAÇÃO</th>
+              <th>MEMÓRIA</th>
+              <th>CONTEÚDO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- preenchido pelo JS -->
+          </tbody>
+        </table>
+      </div>
+
+    </div><!-- fim area-principal -->
 
   </section>
 </main>
+
+<script src="../JS/lista.js"></script>
 </body>
 </html>
