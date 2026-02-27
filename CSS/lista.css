@@ -273,3 +273,113 @@
   letter-spacing: 0.05em;
   flex-shrink: 0;
 }
+
+/* =============================================
+   LAYOUT PRINCIPAL: visualização + memória
+   ============================================= */
+
+.area-principal {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+/* Visualização ocupa o espaço restante */
+.area-visual {
+  flex: 1;
+  min-width: 0;
+  margin-top: 0;
+  min-height: 180px;
+  background: #111;
+  border-radius: 20px;
+  padding: 40px 30px 30px;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  position: relative;
+}
+
+/* NULL label quando lista vazia */
+.null-label {
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* =============================================
+   TABELA DE MEMÓRIA
+   ============================================= */
+
+.area-memoria {
+  width: 260px;
+  flex-shrink: 0;
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #222;
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.tabela-memoria {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  font-family: 'Courier New', monospace;
+}
+
+.tabela-memoria thead th {
+  background: #1a1a1a;
+  color: #aaa;
+  padding: 8px 10px;
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #333;
+  font-weight: 700;
+}
+
+.tabela-memoria tbody td {
+  padding: 6px 10px;
+  text-align: center;
+  color: #ccc;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+/* Linha "inicio" */
+.mem-row-inicio td:first-child { color: #fff; font-weight: bold; }
+.mem-row-inicio td:last-child  { color: #3bb3f3; }
+
+/* Separadores ... */
+.mem-sep td { color: #444; font-size: 0.75rem; padding: 2px 10px; }
+
+/* Linha de dados do nó */
+.mem-row-dados td:first-child { color: #aaa; }
+.mem-row-dados td:nth-child(2) { color: #888; font-size: 0.75rem; }
+.mem-row-dados td:last-child  { color: #fff; font-weight: bold; }
+
+/* Linha de ponteiro prox */
+.mem-row-prox td:first-child { color: #666; }
+
+/* Ponteiro colorido */
+.mem-ptr  { color: #3bb3f3 !important; }
+.mem-null { color: #e74c3c !important; }
+
+/* Linha em destaque (busca) */
+.mem-destaque td { background: rgba(241,196,15,0.12) !important; color: #f1c40f !important; }
+
+/* Animação de entrada de linha */
+.mem-row-anim {
+  animation: fadeInRow 0.4s ease both;
+}
+
+@keyframes fadeInRow {
+  from { opacity: 0; transform: translateX(10px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Scroll da tabela */
+.area-memoria::-webkit-scrollbar { width: 6px; }
+.area-memoria::-webkit-scrollbar-thumb { background: #333; border-radius: 6px; }

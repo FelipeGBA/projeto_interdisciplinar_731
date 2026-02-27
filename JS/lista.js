@@ -1,11 +1,17 @@
 // =============================================
 //   LISTA ENCADEADA — lista.js
 //   Modalidades: início, fim, ordenada
+//   + Tabela de memória simulada
 // =============================================
 
 let lista = [];
 let modalidade = 'inicio';
 let mensagemTimer = null;
+
+// Simula endereços de memória
+function gerarEndereco() {
+  return '0x' + Math.floor(Math.random() * 0xFFFF).toString(16).toUpperCase().padStart(4, '0');
+}
 
 // ---------- Modalidade ----------
 
@@ -23,6 +29,7 @@ function trocarModalidade(modo, btnEl) {
 
   lista = [];
   renderizar();
+  renderizarMemoria();
   mostrarMensagem(`🔄 Modo: ${titulos[modo]}`, 'aviso');
 }
 
@@ -49,6 +56,8 @@ function inserir() {
     renderizar('inserir', idx);
     mostrarMensagem(`✅ ${v} inserido em ordem (posição ${idx})!`, 'sucesso');
   }
+
+  renderizarMemoria();
 }
 
 // ---------- Remoções ----------
@@ -57,6 +66,7 @@ function removerInicio() {
   if (lista.length === 0) { mostrarMensagem('⚠️ Lista vazia!', 'aviso'); return; }
   const removido = lista.shift();
   renderizar('remover', 0);
+  renderizarMemoria();
   mostrarMensagem(`🗑️ ${removido.valor} removido do início!`, 'remover');
 }
 
@@ -64,6 +74,7 @@ function removerFinal() {
   if (lista.length === 0) { mostrarMensagem('⚠️ Lista vazia!', 'aviso'); return; }
   const removido = lista.pop();
   renderizar('remover', lista.length);
+  renderizarMemoria();
   mostrarMensagem(`🗑️ ${removido.valor} removido do final!`, 'remover');
 }
 
@@ -78,6 +89,7 @@ function buscar() {
     return;
   }
   destacarNo(idx);
+  destacarLinhaMemoria(idx);
   mostrarMensagem(`🔍 ${v} encontrado na posição ${idx}!`, 'busca');
 }
 
@@ -86,13 +98,14 @@ function buscar() {
 function reiniciar() {
   lista = [];
   renderizar();
+  renderizarMemoria();
   mostrarMensagem('🔄 Lista reiniciada!', 'aviso');
 }
 
 // ---------- Helpers ----------
 
 function criarNo(valor) {
-  return { valor, id: Date.now() + Math.random() };
+  return { valor, id: Date.now() + Math.random(), endereco: gerarEndereco() };
 }
 
 function getValor() {
@@ -102,18 +115,22 @@ function getValor() {
   return v;
 }
 
-// ---------- Renderização ----------
+// ---------- Renderização da lista ----------
 
 function renderizar(tipo, indiceAlvo) {
   const container = document.getElementById('lista');
   container.innerHTML = '';
 
   if (lista.length === 0) {
-    container.innerHTML = '<div class="lista-vazia">Lista vazia — insira um valor para começar</div>';
+    // Mostra INÍCIO → NULL quando vazia
+    container.innerHTML = `
+      <span class="label-inicio-fixo">INÍCIO</span>
+      <span class="seta-icone">→</span>
+      <span class="null-label">NULL</span>
+    `;
     return;
   }
 
-  // Label fixo INÍCIO
   const labelInicio = document.createElement('span');
   labelInicio.className = 'label-inicio-fixo';
   labelInicio.textContent = 'INÍCIO';
@@ -129,7 +146,6 @@ function renderizar(tipo, indiceAlvo) {
     wrapper.className = 'no-wrapper';
     wrapper.style.animationDelay = `${i * 0.06}s`;
 
-    // Nó
     const noEl = document.createElement('div');
     noEl.className = 'no';
     noEl.dataset.id = no.id;
@@ -139,11 +155,10 @@ function renderizar(tipo, indiceAlvo) {
 
     noEl.innerHTML = `
       <div class="no-dados">${no.valor}</div>
-      <div class="no-next">${i < lista.length - 1 ? '→' : 'NULL'}</div>
+      <div class="no-next">${i < lista.length - 1 ? lista[i+1].endereco : 'NULL'}</div>
     `;
     wrapper.appendChild(noEl);
 
-    // Seta entre nós (exceto no último)
     if (i < lista.length - 1) {
       const seta = document.createElement('span');
       seta.className = 'seta-icone';
@@ -152,6 +167,81 @@ function renderizar(tipo, indiceAlvo) {
     }
 
     container.appendChild(wrapper);
+  });
+}
+
+// ---------- Tabela de Memória ----------
+
+function renderizarMemoria() {
+  const tabela = document.getElementById('tabela-memoria');
+  if (!tabela) return;
+
+  const tbody = tabela.querySelector('tbody');
+  tbody.innerHTML = '';
+
+  if (lista.length === 0) {
+    // Linha de início apontando para NULL
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>inicio</td>
+      <td>0x0004</td>
+      <td class="mem-null">NULL</td>
+    `;
+    tbody.appendChild(tr);
+    return;
+  }
+
+  // Linha "inicio" aponta para endereço do primeiro nó
+  const trInicio = document.createElement('tr');
+  trInicio.className = 'mem-row-inicio';
+  trInicio.innerHTML = `
+    <td>inicio</td>
+    <td>0x0004</td>
+    <td class="mem-ptr">${lista[0].endereco}</td>
+  `;
+  tbody.appendChild(trInicio);
+
+  // Separador
+  const trSep = document.createElement('tr');
+  trSep.className = 'mem-sep';
+  trSep.innerHTML = `<td>...</td><td>...</td><td>...</td>`;
+  tbody.appendChild(trSep);
+
+  // Um nó por linha
+  lista.forEach((no, i) => {
+    const proxConteudo = i < lista.length - 1 ? lista[i+1].endereco : 'NULL';
+
+    const trDados = document.createElement('tr');
+    trDados.className = 'mem-row-dados mem-row-anim';
+    trDados.dataset.idx = i;
+    trDados.innerHTML = `
+      <td>dados</td>
+      <td>${no.endereco}</td>
+      <td>${no.valor}</td>
+    `;
+    tbody.appendChild(trDados);
+
+    const trProx = document.createElement('tr');
+    trProx.className = 'mem-row-prox';
+    trProx.innerHTML = `
+      <td>prox</td>
+      <td></td>
+      <td class="${proxConteudo === 'NULL' ? 'mem-null' : 'mem-ptr'}">${proxConteudo}</td>
+    `;
+    tbody.appendChild(trProx);
+
+    if (i < lista.length - 1) {
+      const trSep2 = document.createElement('tr');
+      trSep2.className = 'mem-sep';
+      trSep2.innerHTML = `<td>...</td><td>...</td><td>...</td>`;
+      tbody.appendChild(trSep2);
+    }
+  });
+}
+
+function destacarLinhaMemoria(idx) {
+  document.querySelectorAll('.mem-row-dados').forEach((tr, i) => {
+    tr.classList.toggle('mem-destaque', i === idx);
   });
 }
 
@@ -182,3 +272,4 @@ function mostrarMensagem(texto, tipo) {
 
 // ---------- Init ----------
 renderizar();
+renderizarMemoria();

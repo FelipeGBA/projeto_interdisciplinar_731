@@ -48,7 +48,6 @@
         <label>Valor</label>
         <input type="number" id="valor" placeholder="Digite o valor">
       </div>
-
       <div class="grupo botoes">
         <button onclick="inserir()" class="btn inserir">Inserir</button>
         <button onclick="removerInicio()" class="btn remover">Remover Início</button>
@@ -58,10 +57,31 @@
       </div>
     </div>
 
-    <!-- VISUALIZAÇÃO -->
-    <div class="area-visual">
-      <div id="lista" class="lista"></div>
-    </div>
+    <!-- ÁREA PRINCIPAL: visualização + memória -->
+    <div class="area-principal">
+
+      <!-- VISUALIZAÇÃO -->
+      <div class="area-visual">
+        <div id="lista" class="lista"></div>
+      </div>
+
+      <!-- TABELA DE MEMÓRIA -->
+      <div class="area-memoria">
+        <table id="tabela-memoria" class="tabela-memoria">
+          <thead>
+            <tr>
+              <th>INFORMAÇÃO</th>
+              <th>MEMÓRIA</th>
+              <th>CONTEÚDO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- preenchido pelo JS -->
+          </tbody>
+        </table>
+      </div>
+
+    </div><!-- fim area-principal -->
 
   </section>
 </main>
