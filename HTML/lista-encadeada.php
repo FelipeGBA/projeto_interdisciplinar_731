@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['usuario'])){
+    header("Location: /login.php");
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -57,7 +67,6 @@
       </div>
     </div>
 
-    <!-- ÁREA PRINCIPAL: visualização + memória -->
     <div class="area-principal">
 
       <!-- VISUALIZAÇÃO -->
