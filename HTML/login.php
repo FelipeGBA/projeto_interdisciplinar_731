@@ -46,7 +46,7 @@ if ($_SERVER[""] == "POST") {
 
     <a href="registrar.php" class="btn-register-outline">Registrar</a>
 
-    <a href="tela-inicial.html" class="btn-back-home">Voltar para o início</a>
+    <a href="tela-inicial.php" class="btn-back-home">Voltar para o início</a>
 
   </div>
 

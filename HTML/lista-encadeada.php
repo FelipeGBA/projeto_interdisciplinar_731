@@ -19,21 +19,21 @@
 <main class="container">
 
 <nav class="side-navbar">
-  <h1>Lista Sequencial</h1>
+  <h1>Lista Encadeada</h1>
 
-  <a href="pilha.html" class="menu-item">
+  <a href="pilha.php" class="menu-item">
     <span class="circle">1</span><span>Pilha</span>
   </a>
 
-  <a href="fila.html" class="menu-item">
+  <a href="fila.php" class="menu-item">
     <span class="circle">2</span><span>Fila</span>
   </a>
 
-  <a href="array.html" class="menu-item">
+  <a href="array.php" class="menu-item">
     <span class="circle">3</span><span>Array</span>
   </a>
 
-  <a href="listas.html" class="menu-item active">
+  <a href="listas.php" class="menu-item active">
     <span class="circle">4</span><span>Listas</span>
   </a>
 </nav>

@@ -9,11 +9,11 @@
 <body>
 
 <header class="top-bar">
-  <a href="tela-inicial.html" class="logo-text">EstruturaDados</a>
+  <a href="tela-inicial.php" class="logo-text">EstruturaDados</a>
 
   <div class="login-area">
     <img src="../imagens/user.png" alt="Usuário">
-    <a href="login.html">Usuario</a>
+    <a href="login.php">Usuario</a>
   </div>
 </header>
 
@@ -23,22 +23,22 @@
 
     <h1>Pilha</h1>
 
-    <a href="pilha.html" class="menu-item active">
+    <a href="pilha.php" class="menu-item active">
       <span class="circle">1</span>
       <span>Pilha</span>
     </a>
 
-    <a href="fila.html" class="menu-item">
+    <a href="fila.php" class="menu-item">
       <span class="circle">2</span>
       <span>Fila</span>
     </a>
 
-    <a href="array.html" class="menu-item">
+    <a href="array.php" class="menu-item">
       <span class="circle">3</span>
       <span>Array</span>
     </a>
 
-    <a href="listas.html" class="menu-item">
+    <a href="listas.php" class="menu-item">
       <span class="circle">4</span>
       <span>Listas</span>
     </a>

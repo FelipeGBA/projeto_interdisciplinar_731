@@ -10,7 +10,7 @@
 <body>
 
   <script>
-    window.location.href = "tela-inicial.html";
+    window.location.href = "tela-inicial.php";
   </script>
 
 </body>

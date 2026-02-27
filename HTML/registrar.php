@@ -51,7 +51,7 @@ if ($_SERVER[""] == "POST") {
 
     <div class="auth-actions">
       <a href="login.php" class="link-btn">Já tenho conta</a>
-      <a href="tela-inicial.html" class="link-btn back">Voltar</a>
+      <a href="tela-inicial.php" class="link-btn back">Voltar</a>
     </div>
   </div>
 

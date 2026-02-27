@@ -1,10 +1,8 @@
 <?php
 $servername = "localhost:3306";
 $nomedb= "bancoed";
-$username= "teste1";
-$senha= "solucao";
+$username= "interdisciplinar";
+$senha= "731";
 
 $conexao= new PDO("mysql:host=$servername;dbname=$nomedb",$username,$senha);
-echo("Conexão realizada com sucesso!");
-echo("Olá munde")
 ?>

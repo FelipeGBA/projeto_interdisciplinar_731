@@ -9,7 +9,7 @@
 <body>
 
 <header class="top-bar">
-  <a href="tela-inicial.html" class="logo-text">EstruturaDados</a>
+  <a href="tela-inicial.php" class="logo-text">EstruturaDados</a>
   <div class="login-area">
     <img src="../imagens/user.png" alt="Usuário">
     <span>Usuário</span>
@@ -20,16 +20,16 @@
 
   <nav class="side-navbar">
     <h1>Listas</h1>
-    <a href="pilha.html" class="menu-item">
+    <a href="pilha.php" class="menu-item">
       <span class="circle">1</span><span>Pilha</span>
     </a>
-    <a href="fila.html" class="menu-item">
+    <a href="fila.php" class="menu-item">
       <span class="circle">2</span><span>Fila</span>
     </a>
-    <a href="array.html" class="menu-item">
+    <a href="array.php" class="menu-item">
       <span class="circle">3</span><span>Array</span>
     </a>
-    <a href="listas.html" class="menu-item active">
+    <a href="listas.php" class="menu-item active">
       <span class="circle">4</span><span>Listas</span>
     </a>
   </nav>
@@ -42,10 +42,10 @@
       <div class="horizontal-line"></div>
 
       <div class="tabs">
-        <a href="listas.html" class="tab">Encadeada</a>
-        <a href="lista-sequencial.html" class="tab">Sequencial</a>
-        <a href="lista-dinamica.html" class="tab">Dinâmica</a>
-        <a href="lista-circular.html" class="tab active-tab">Circular</a>
+        <a href="listas.php" class="tab">Encadeada</a>
+        <a href="lista-sequencial.php" class="tab">Sequencial</a>
+        <a href="lista-dinamica.php" class="tab">Dinâmica</a>
+        <a href="lista-circular.php" class="tab active-tab">Circular</a>
       </div>
     </div>
 

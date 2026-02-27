@@ -15,8 +15,8 @@
 
   <div class="login-area">
   <div class="login-switch">
-    <a href="login.html" class="login-option login">Login</a>
-    <a href="registrar.html" class="login-option register">Registrar</a>
+    <a href="login.php" class="login-option login">Login</a>
+    <a href="registrar.php" class="login-option register">Registrar</a>
     <span class="bubble"></span>
   </div>
 </div>
@@ -142,13 +142,13 @@
       Quer experimentar na prática essas estruturas?
     </p>
 
-    <a href="registrar.html" class="btn-cadastro">
+    <a href="registrar.php" class="btn-cadastro">
       CADASTRE-SE
     </a>
     
   <p class="cta-login">
     Já tem uma conta?
-    <a href="login.html" class="login-link">Entrar</a>
+    <a href="login.php" class="login-link">Entrar</a>
   </p>
 
   </div>
