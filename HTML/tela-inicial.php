@@ -59,11 +59,11 @@
     <div class="texto">
       <h2>Pilha</h2>
       <p>
-        A pilha é uma estrutura de dados do tipo <strong>LIFO</strong>
-        (Last In, First Out).
+       A pilha é uma estrutura de dados do tipo LIFO (Last In, First Out), ou seja, o último elemento inserido é o primeiro a ser removido. Suas principais operações são <strong>push</strong>, que insere um elemento no topo, e <strong>pop</strong>, que remove o elemento do topo. Essas operações possuem complexidade O(1), pois atuam apenas na parte superior da estrutura.
+
       </p>
       <p>
-        As principais operações são <strong>push</strong> e <strong>pop</strong>.
+  A pilha é utilizada no controle de chamadas de funções (call stack), no sistema de desfazer e refazer (Ctrl + Z) e na navegação de páginas do navegador. Ela pode ser implementada com vetor ou lista encadeada, onde cada elemento armazena um valor e uma referência para o próximo.
       </p>
     </div>
 
@@ -76,11 +76,10 @@
     <div class="texto">
       <h2>Fila</h2>
       <p>
-        A fila segue o modelo <strong>FIFO</strong>
-        (First In, First Out).
+        A fila é uma estrutura de dados do tipo FIFO (First In, First Out), ou seja, o primeiro elemento inserido é o primeiro a ser removido. Suas principais operações são <strong>enqueue</strong>, que insere um elemento no final da fila, e <strong>dequeue</strong>, que remove o elemento do início. Assim como na pilha, essas operações possuem complexidade O(1), pois atuam apenas nas extremidades da estrutura.
       </p>
       <p>
-        Operações principais: <strong>enqueue</strong> e <strong>dequeue</strong>.
+        A fila é utilizada em sistemas de atendimento, gerenciamento de processos do sistema operacional e controle de requisições em servidores. Ela pode ser implementada com vetor ou lista encadeada, onde os elementos são organizados respeitando sempre a ordem de chegada.
       </p>
     </div>
 
@@ -93,11 +92,9 @@
     <div class="texto">
       <h2>Array</h2>
       <p>
-        Estrutura com posições contíguas de memória, acessadas por índice.
-      </p>
+      O array é uma estrutura de dados que armazena elementos do mesmo tipo em posições contíguas de memória, permitindo acesso direto por meio de um índice. Isso significa que é possível acessar qualquer elemento de forma rápida utilizando sua posição, com complexidade O(1). No entanto, a inserção ou remoção em posições intermediárias pode exigir deslocamento de elementos      </p>
       <p>
-        Acesso rápido, mas inserções podem ser custosas.
-      </p>
+      O array é amplamente utilizado para armazenar coleções de dados de tamanho fixo, como listas de números, caracteres ou objetos. Por possuir tamanho definido no momento da criação, é uma estrutura simples, eficiente e muito utilizada como base para outras estruturas de dados mais complexas.      </p>
     </div>
 
     <div class="imagem">
@@ -113,11 +110,10 @@
     <div class="texto">
       <h2>Lista Encadeada</h2>
       <p>
-        Cada nó possui um valor e uma referência para o próximo.
+        A lista encadeada é uma estrutura de dados formada por nós, onde cada nó armazena um valor e uma referência para o próximo elemento da sequência. Diferente do array, seus elementos não precisam estar em posições contíguas de memória, pois a ligação entre eles é feita por meio de ponteiros. Isso permite inserções e remoções mais flexíveis, especialmente no início ou no meio da estrutura.
       </p>
       <p>
-        Inserções são eficientes, acesso é sequencial.
-      </p>
+        A lista encadeada é utilizada quando há necessidade de tamanho dinâmico, já que pode crescer ou diminuir conforme a demanda. Ela pode ser simples (aponta apenas para o próximo nó), duplamente encadeada (aponta para o anterior e o próximo) ou circular, sendo muito aplicada na implementação de pilhas, filas e outros tipos de estruturas dinâmicas.      </p>
     </div>
   </div>
 
@@ -125,11 +121,10 @@
     <div class="texto">
       <h2>Lista Circular</h2>
       <p>
-        O último nó aponta para o primeiro, formando um ciclo.
+        A fila circular é uma variação da fila tradicional (FIFO) em que o último elemento se conecta novamente ao primeiro, formando um ciclo. Dessa forma, quando o final da estrutura é alcançado, as próximas inserções podem reaproveitar os espaços liberados no início, tornando o uso da memória mais eficiente. Suas principais operações continuam sendo enqueue e dequeue, mantendo complexidade O(1).
       </p>
       <p>
-        Não existe um fim definido.
-      </p>
+        A fila circular é muito utilizada em sistemas que trabalham com buffers, como controle de impressão, gerenciamento de processos e transmissão de dados. Ela pode ser implementada com vetor, utilizando índices que avançam de forma circular, ou com lista encadeada circular, onde o último nó aponta para o primeiro.      </p>
     </div>
 
     <div class="imagem">
